@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text } from 'react-native';
 
+import { carregaProdutores } from "../../../services/carregaDados";
+
 export default function Produtores() {
-    return <Text>Produtores</Text>
+    useEffect(() => {
+        const retorno = carregaProdutores();
+        console.log(retorno);
+    }, []);
+
+    return <Text>Produtores</Text>      
 }
